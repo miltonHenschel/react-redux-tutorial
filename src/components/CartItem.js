@@ -1,4 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import { ChevronDown, ChevronUp } from '../icon';
 import { removeItem, increase, decrease } from '../features/cart/cartSlice';
 
@@ -54,8 +57,12 @@ const CartItem = ({
   );
 };
 
-CartItem.prototype{
-
-}
+CartItem.propTypes = {
+  id: PropTypes.number.isRequired,
+  img: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  amount: PropTypes.number.isRequired,
+};
 
 export default CartItem;
